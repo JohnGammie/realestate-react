@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.4142" version="1.1" viewBox="0 0 1890 1890" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+    <g transform="scale(1.3333)">
+        <g transform="matrix(7.213 0 0 7.213 -2549.8 -2762.4)">
+            <g transform="translate(-.49489 10.558)">
+                <path d="m385.67 447.57c1e-3 -31.866 25.871-57.736 57.736-57.736s57.736 25.87 57.736 57.736v107.06h-115.47v-107.06z" fill="#c9b298"/>
+            </g>
+            <g transform="matrix(.90011 0 0 .90082 44.294 58.352)">
+                <path d="m385.67 447.57c1e-3 -31.866 25.871-57.736 57.736-57.736s57.736 25.87 57.736 57.736v107.06h-115.47v-107.06z" fill="#90c3e6"/>
+            </g>
+            <path d="m495.38 470.85c-1e-3 -31.865-25.871-57.736-57.736-57.736-7.588 0-14.835 1.467-21.475 4.133 7.923-4.895 17.256-7.72 27.242-7.72 28.682 0 51.968 23.304 51.969 52.009v9.314z" fill="#759fbc"/>
+            <rect x="391.44" y="488.96" width="103.94" height="5.773" fill="#759fbc"/>
+            <g transform="translate(75.545 -815.54)">
+                <path d="m416.76 1259.4c1.988 5.51 3.072 11.45 3.072 17.64v96.44h-5.772v-114.08h2.7z" fill="#759fbc"/>
+            </g>
+            <g transform="translate(75.545 -815.54)">
+                <path d="m362.62 1225.3v148.18h-5.773v-147.27c1.889-0.41 3.815-0.72 5.773-0.91z" fill="#759fbc"/>
+            </g>
+            <g transform="matrix(1.0227 0 0 .66674 -10.078 184.54)">
+                <rect x="391.44" y="448.76" width="103.94" height="8.658" fill="#c9b298"/>
+            </g>
+            <g transform="matrix(8.8314e-17 -1.4423 .66674 4.0826e-17 137.94 1122.5)">
+                <rect x="391.44" y="448.76" width="103.94" height="8.658" fill="#c9b298"/>
+            </g>
+        </g>
+    </g>
+</svg>
