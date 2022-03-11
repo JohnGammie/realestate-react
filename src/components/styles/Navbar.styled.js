@@ -5,6 +5,7 @@ export const NavbarContainer = styled.div`
   display: flex;
   gap: 2em;
   justify-content: space-between;
+  margin-bottom: 18px;
 `;
 
 export const NavbarIcon = styled(Link)`
