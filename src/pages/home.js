@@ -1,6 +1,7 @@
 import React from "react";
 import "./pages.css";
 import SearchMain from "../components/SearchMain";
+import ExploreSection from "../ExploreSection/ExploreSection";
 
 const Home = () => {
   return (
@@ -9,9 +10,16 @@ const Home = () => {
         <div className="sectionTitle">Search properties</div>
         <SearchMain />
       </div>
-      <div className="section">Explore</div>
-      <div className="sections">Property news</div>
-      <div className="section">Home loans</div>
+      <div className="section">
+        <div className="sectionTitle">Explore</div>
+        <ExploreSection />
+      </div>
+      <div className="sections">
+        <div className="sectionTitle">Property news</div>
+      </div>
+      <div className="section">
+        <div className="sectionTitle">Home loans</div>
+      </div>
     </>
   );
 };

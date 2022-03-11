@@ -8,13 +8,17 @@
   height: 40vh;
 
   font-weight: bolder;
-  font-size: 3em;
 
   border-radius: 10px;
 }
 
-.sectionTitle {
+#sectionSearch .sectionTitle {
   color: white;
   text-shadow: rgb(10, 10, 9) 2px 0 5px;
-  padding: 12px;
+  font-size: 48px;
+}
+
+.sectionTitle {
+  padding: 12px 0px;
+  font-size: 36px;
 }
