@@ -5,6 +5,7 @@ import ExploreSection from "../ExploreSection/ExploreSection";
 import PropertyNewsSection from "../components/PropertyNewsSection/PropertyNewsSection";
 import HomeLoansSection from "../components/HomeLoansSection";
 import TabbedList from "../components/TabbedList";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -28,6 +29,7 @@ const Home = () => {
       <div className="section">
         <TabbedList />
       </div>
+      <Footer />
     </div>
   );
 };
