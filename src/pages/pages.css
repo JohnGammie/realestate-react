@@ -39,3 +39,17 @@ body {
   align-items: center;
   padding: 0px 16px;
 }
+
+.notFound {
+  font-size: 36px;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.notFound a {
+  text-decoration: none;
+  color: blue;
+}
