@@ -9,11 +9,10 @@ import {
 import SearchInput from "./SearchInput";
 import SearchFilters from "./SearchFilters";
 import { useState } from "react";
-import { useEffect } from "react";
 
-const SearchMain = () => {
+const SearchMain = (props) => {
   const tabNames = ["Buy", "Rent", "Sold", "Address", "Agents"];
-  const [activeTabName, setActiveTabName] = useState(tabNames[0]);
+  const [activeTabName, setActiveTabName] = useState(tabNames[props.tab ?? 0]);
   const [inputText, setInputText] = useState("Box Hill");
   // @TODO need to build 'form-state' out of this object
   let searchQuery = {

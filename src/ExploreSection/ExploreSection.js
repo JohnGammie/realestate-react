@@ -8,9 +8,9 @@ import {
 } from "../components/styles/ExploreSection.styled";
 import Card from "./Card";
 
-const ExploreSection = () => {
+const ExploreSection = (props) => {
   const tabNames = ["Buying", "Renting", "Selling", "Researching"];
-  const [activeTabName, setActiveTabName] = useState("Buying");
+  const [activeTabName, setActiveTabName] = useState(tabNames[props.tab ?? 0]);
   const cardContent = require("./CardContent.json");
 
   const generateButtons = () => {

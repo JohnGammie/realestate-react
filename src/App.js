@@ -7,6 +7,7 @@ import SignIn from "./pages/sign-in";
 import Join from "./pages/join";
 import "./styles.css";
 import NotFound from "./pages/NotFound";
+import Sold from "./pages/sold";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/buy" element={<Buy />}></Route>
           <Route path="/rent" element={<Rent />}></Route>
+          <Route path="/sold" element={<Sold />}></Route>
           <Route path="/sign-in" element={<SignIn />}></Route>
           <Route path="/join" element={<Join />}></Route>
         </Routes>

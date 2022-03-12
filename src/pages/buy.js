@@ -1,7 +1,8 @@
 import React from "react";
+import Index from "./index";
 
 const Buy = () => {
-  return <div>Buy</div>;
+  return <Index />;
 };
 
 export default Buy;
