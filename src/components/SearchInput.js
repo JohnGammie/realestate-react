@@ -1,33 +1,48 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import magnify from "../images/magnify.svg";
-import {
-  StyledSearchInput,
-  Input,
-  DropdownInput,
-} from "./styles/SearchInput.styled";
+import { StyledSearchInput, DropdownInput } from "./styles/SearchInput.styled";
 
 export const SearchInput = (props) => {
-  // @TODO get drop down data items from an API endpoint
-  // @TODO possibly introduce state of the Select dropdown,
-  // which is then also returnable to potential Parent components through a method call. (e.g. to build out the SearchMain overall query)
+  const [options, setOptions] = useState([]);
+
+  const fetchOptions = async () => {
+    await fetch(process.env.REACT_APP_API_URL + "/search/suburbs", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setOptions(data.map((item) => item.name));
+      });
+  };
+
+  useEffect(() => {
+    fetchOptions();
+  }, []);
+
+  const generateOptions = () => {
+    let collection = [];
+    options.forEach((item, index) =>
+      collection.push(
+        <option key={index} value={item}>
+          {item}
+        </option>
+      )
+    );
+    return collection;
+  };
+
   return (
     <StyledSearchInput>
       <img src={magnify} alt="magnify" />
-      {/* <Input
-        type="text"
-        placeholder={props.input}
-        onInput={(e) => props.setInput(e.target.value)}
-      /> */}
       <DropdownInput
         id="suburbs"
         name="suburbs"
         value={props.input}
         onChange={(e) => props.setInput(e.target.value)}
       >
-        <option value="Box Hill">Box Hill</option>
-        <option value="South Yarra">South Yarra</option>
-        <option value="Carlton">Carlton</option>
-        <option value="Fitzroy">Fitzroy</option>
+        {generateOptions()}
       </DropdownInput>
     </StyledSearchInput>
   );
