@@ -21,3 +21,9 @@ export const Input = styled.input`
     outline: none;
   }
 `;
+
+export const DropdownInput = styled.select`
+  border: none;
+  background-color: inherit;
+  width: 90%;
+`;

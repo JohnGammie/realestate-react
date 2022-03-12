@@ -14,6 +14,7 @@ const SearchMain = (props) => {
   const tabNames = ["Buy", "Rent", "Sold", "Address", "Agents"];
   const [activeTabName, setActiveTabName] = useState(tabNames[props.tab ?? 0]);
   const [inputText, setInputText] = useState("Box Hill");
+  // @TODO probably get these values form an API endpoint
   // @TODO need to build 'form-state' out of this object
   let searchQuery = {
     "activeTabName:": activeTabName,
