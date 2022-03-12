@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledHomeLoansSection = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  height: 40vh;
+  height: 100%;
 `;
 
 export const StyledHomeLoansSectionLeft = styled.div`

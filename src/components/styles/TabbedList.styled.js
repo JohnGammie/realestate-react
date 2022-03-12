@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const TabListSection = styled.div`
   height: 40vh;
+  margin: 8px;
 `;
 
 export const TabList = styled.div`
