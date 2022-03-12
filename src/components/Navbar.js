@@ -20,11 +20,9 @@ const Navbar = () => {
         <NavbarItemLink to="/buy">Buy</NavbarItemLink>
         <NavbarItemLink to="/rent">Rent</NavbarItemLink>
         <NavbarItemLink to="/sold">Sold</NavbarItemLink>
-        <NavbarItemLink to="/new-homes">New Homes</NavbarItemLink>
         <NavbarItemLink to="/find-agents">Find agents</NavbarItemLink>
         <NavbarItemLink to="/home-loans">Home loans</NavbarItemLink>
         <NavbarItemLink to="/news">News</NavbarItemLink>
-        <NavbarItemLink to="/commerical">Commerical</NavbarItemLink>
       </NavbarItems>
       <NavbarUser>
         <NavbarButton to="/sign-in">Sign in</NavbarButton>
