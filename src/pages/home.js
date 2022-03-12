@@ -3,6 +3,7 @@ import "./pages.css";
 import SearchMain from "../components/SearchMain";
 import ExploreSection from "../ExploreSection/ExploreSection";
 import PropertyNewsSection from "../components/PropertyNewsSection/PropertyNewsSection";
+import HomeLoansSection from "../components/HomeLoansSection";
 
 const Home = () => {
   return (
@@ -21,6 +22,10 @@ const Home = () => {
       </div>
       <div className="section">
         <div className="sectionTitle">Home loans</div>
+        <HomeLoansSection />
+      </div>
+      <div className="section">
+        <div className="sectionTitle">Quick links</div>
       </div>
     </div>
   );
