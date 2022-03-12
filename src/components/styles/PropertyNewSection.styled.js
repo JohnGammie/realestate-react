@@ -10,8 +10,13 @@ export const StyledCard = styled.div`
   margin: 4px;
 
   & img {
-    width: 80%;
-    height: 128px;
+    max-width: 80%;
+    max-height: 200px;
+  }
+
+  &:hover {
+    color: blue;
+    cursor: pointer;
   }
 `;
 
