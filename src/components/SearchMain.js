@@ -25,8 +25,6 @@ const SearchMain = () => {
     console.log(searchQuery);
   };
 
-  useEffect(() => console.log(activeTabName), [activeTabName]);
-
   const Tabs = () => {
     let tabCollection = [];
     tabNames.forEach((tabName, index) => {

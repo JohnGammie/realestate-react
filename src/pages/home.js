@@ -4,6 +4,7 @@ import SearchMain from "../components/SearchMain";
 import ExploreSection from "../ExploreSection/ExploreSection";
 import PropertyNewsSection from "../components/PropertyNewsSection/PropertyNewsSection";
 import HomeLoansSection from "../components/HomeLoansSection";
+import TabbedList from "../components/TabbedList";
 
 const Home = () => {
   return (
@@ -25,7 +26,7 @@ const Home = () => {
         <HomeLoansSection />
       </div>
       <div className="section">
-        <div className="sectionTitle">Quick links</div>
+        <TabbedList />
       </div>
     </div>
   );

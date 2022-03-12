@@ -1,0 +1,89 @@
+{
+  "tabs": [
+    {
+      "tabName": "Real estate",
+      "tabDescription": "Real estate in Australia",
+      "tabLinks": [
+        {
+          "description": "Real estate NSW",
+          "url": "todo.create.this.resource"
+        },
+        {
+          "description": "Real estate VIC",
+          "url": "todo.create.this.resource"
+        },
+        {
+          "description": "Real estate QLD",
+          "url": "todo.create.this.resource"
+        },
+        { "description": "Real estate WA", "url": "todo.create.this.resource" },
+        { "description": "Real estate SA", "url": "todo.create.this.resource" },
+        {
+          "description": "Real estate TAS",
+          "url": "todo.create.this.resource"
+        },
+        {
+          "description": "Real estate ACT",
+          "url": "todo.create.this.resource"
+        },
+        { "description": "Real estate NT", "url": "todo.create.this.resource" },
+        {
+          "description": "Real estate Sydney",
+          "url": "todo.create.this.resource"
+        },
+        {
+          "description": "Real estate Melbourne",
+          "url": "todo.create.this.resource"
+        },
+        {
+          "description": "Real estate Brisbane",
+          "url": "todo.create.this.resource"
+        },
+        {
+          "description": "Real estate Perth",
+          "url": "todo.create.this.resource"
+        },
+        {
+          "description": "Real estate Adelaide",
+          "url": "todo.create.this.resource"
+        },
+        {
+          "description": "Real estate Hobart",
+          "url": "todo.create.this.resource"
+        },
+        {
+          "description": "Real estate Cranberra",
+          "url": "todo.create.this.resource"
+        },
+        {
+          "description": "Real estate Darwin",
+          "url": "todo.create.this.resource"
+        }
+      ]
+    },
+    {
+      "tabName": "New homes",
+      "tabDescription": "New homes in Australia",
+      "tabLinks": [
+        { "description": "New homes NSW", "url": "todo.create.this.resource" },
+        { "description": "New homes VIC", "url": "todo.create.this.resource" }
+      ]
+    },
+    {
+      "tabName": "Popular areas",
+      "tabDescription": "Browse popular areas",
+      "tabLinks": [
+        { "description": "New homes NSW", "url": "todo.create.this.resource" },
+        { "description": "New homes VIC", "url": "todo.create.this.resource" }
+      ]
+    },
+    {
+      "tabName": "Popular searches",
+      "tabDescription": "Browse popular property searches",
+      "tabLinks": [
+        { "description": "New homes NSW", "url": "todo.create.this.resource" },
+        { "description": "New homes VIC", "url": "todo.create.this.resource" }
+      ]
+    }
+  ]
+}
