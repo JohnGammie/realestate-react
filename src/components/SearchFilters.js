@@ -121,6 +121,18 @@ const SearchFilters = (props) => {
     return optionsCollection;
   };
 
+  const clearFilters = () => {
+    setActiveTabName(tabNames[props.tab ?? 0]);
+
+    let priceMin = document.getElementById("priceMin");
+    priceMin.selectedIndex = 0;
+    props.setPriceMin(priceMin.selectedIndex);
+
+    let priceMax = document.getElementById("priceMax");
+    priceMax.selectedIndex = 0;
+    props.setPriceMax(priceMax.selectedIndex);
+  };
+
   return (
     <StyledSearchFilters>
       <div onClick={openModal}>
@@ -176,8 +188,10 @@ const SearchFilters = (props) => {
           </ul>
         </ModalSectionContainer>
         <ModalFooter>
-          <button>Clear Filters</button>
-          <button>Search</button>
+          <button onClick={() => clearFilters()}>Clear Filters</button>
+          <button onClick={() => props.submitSearch(true, activeTabName)}>
+            Search
+          </button>
         </ModalFooter>
       </Modal>
     </StyledSearchFilters>

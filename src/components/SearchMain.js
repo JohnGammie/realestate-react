@@ -57,7 +57,11 @@ const SearchMain = (props) => {
     return <>{tabCollection}</>;
   };
 
-  const submitSearch = () => {
+  const submitSearch = (calledByChild, filterTabName) => {
+    if (calledByChild) {
+      console.log("calledByChild");
+      setActiveTabName(filterTabName); // setState is async, so below logging of state doesn't get this straight away
+    }
     console.log("TODO: Submit search");
     debugOutputSearchState();
   };
@@ -74,6 +78,7 @@ const SearchMain = (props) => {
           setPriceMin={(obj) => setPriceMin(obj)}
           priceMax={priceMax}
           setPriceMax={(obj) => setPriceMax(obj)}
+          submitSearch={submitSearch}
         />
         <SearchButton onClick={() => submitSearch()}>Search</SearchButton>
       </SearchDetailsContainer>
