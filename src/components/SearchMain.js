@@ -9,28 +9,28 @@ import {
 import SearchInput from "./SearchInput";
 import SearchFilters from "./SearchFilters";
 import { useState } from "react";
-import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SearchMain = (props) => {
+  const navigate = useNavigate();
   const tabNames = ["Buy", "Rent", "Sold", "Address", "Agents"];
   const [activeTabName, setActiveTabName] = useState(tabNames[props.tab ?? 0]);
-  const [inputText, setInputText] = useState("Box Hill");
+  const [suburbName, setSuburbName] = useState("Box Hill");
   // @TODO probably get these values form an API endpoint
   // @TODO need to build 'form-state' out of this object
   const [propertyType, setPropertyType] = useState("Any"); // use prop from parent, then null?? "House?""
   const [priceMin, setPriceMin] = useState(0);
   const [priceMax, setPriceMax] = useState(0);
 
+  let searchQuery = {};
   const debugOutputSearchState = () => {
-    let searchQuery = {
-      "activeTabName:": activeTabName,
-      "inputText:": inputText,
-      "propertyType:": propertyType,
-      "priceMin:": priceMin,
-      "priceMax:": priceMax,
+    searchQuery = {
+      activeTabName: activeTabName,
+      suburbName: suburbName,
+      propertyType: propertyType,
+      priceMin: priceMin,
+      priceMax: priceMax,
     };
-
-    console.log(searchQuery);
   };
 
   const Tabs = () => {
@@ -62,15 +62,15 @@ const SearchMain = (props) => {
       console.log("calledByChild");
       setActiveTabName(filterTabName); // setState is async, so below logging of state doesn't get this straight away
     }
-    console.log("TODO: Submit search");
     debugOutputSearchState();
+    navigate("/searchResults", { state: { searchQuery } });
   };
 
   return (
     <SearchContainer>
       <TabsContainer>{Tabs()}</TabsContainer>
       <SearchDetailsContainer>
-        <SearchInput input={inputText} setInput={setInputText} />
+        <SearchInput input={suburbName} setInput={setSuburbName} />
         <SearchFilters
           propertyType={propertyType}
           setPropertyType={(obj) => setPropertyType(obj)}

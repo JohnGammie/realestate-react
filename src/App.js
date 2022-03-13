@@ -8,6 +8,7 @@ import Join from "./pages/join";
 import "./styles.css";
 import NotFound from "./pages/NotFound";
 import Sold from "./pages/sold";
+import SearchResults from "./pages/searchResults";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/sold" element={<Sold />}></Route>
           <Route path="/sign-in" element={<SignIn />}></Route>
           <Route path="/join" element={<Join />}></Route>
+          <Route path="/searchResults" element={<SearchResults />}></Route>
         </Routes>
       </Router>
     </div>
