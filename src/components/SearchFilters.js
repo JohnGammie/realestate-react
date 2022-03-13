@@ -14,9 +14,6 @@ import { useEffect } from "react";
 
 const SearchFilters = (props) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [propertyType, setPropertyType] = useState("House"); // use prop from parent, then null?? "House?""
-  const [priceMin, setPriceMin] = useState(0);
-  const [priceMax, setPriceMax] = useState(0);
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -46,17 +43,17 @@ const SearchFilters = (props) => {
     );
   };
 
-  useEffect(() => {
-    console.log(propertyType);
-  }, [propertyType]);
+  // useEffect(() => {
+  //   console.log(props.propertyType);
+  // }, [props.propertyType]);
 
-  useEffect(() => {
-    console.log(priceMin);
-  }, [priceMin]);
+  // useEffect(() => {
+  //   console.log(props.priceMin);
+  // }, [props.priceMin]);
 
-  useEffect(() => {
-    console.log(priceMax);
-  }, [priceMax]);
+  // useEffect(() => {
+  //   console.log(props.priceMax);
+  // }, [props.priceMax]);
 
   return (
     <StyledSearchFilters>
@@ -88,10 +85,20 @@ const SearchFilters = (props) => {
             <input
               type="radio"
               name="propertyType"
+              id="Any"
+              value="Any"
+              checked={props.propertyType === "Any"}
+              onChange={() => props.setPropertyType("Any")}
+            />
+            <label htmlFor="Any">Any</label>
+
+            <input
+              type="radio"
+              name="propertyType"
               id="House"
               value="House"
-              checked={"House" === propertyType}
-              onChange={() => setPropertyType("House")}
+              checked={props.propertyType === "House"}
+              onChange={() => props.setPropertyType("House")}
             />
             <label htmlFor="House">House</label>
 
@@ -100,8 +107,8 @@ const SearchFilters = (props) => {
               name="propertyType"
               value="Apartment &amp; Unit"
               id="ApartmentUnit"
-              checked={"Apartment & Unit" === propertyType}
-              onChange={() => setPropertyType("Apartment & Unit")}
+              checked={props.propertyType === "Apartment & Unit"}
+              onChange={() => props.setPropertyType("Apartment & Unit")}
             />
             <label htmlFor="ApartmentUnit">Apartment &amp; Unit</label>
           </div>
@@ -113,24 +120,24 @@ const SearchFilters = (props) => {
             <select
               name="priceMin"
               id="priceMin"
-              onChange={(event) => setPriceMin(event.target.value)}
-              value={priceMin}
+              onChange={(event) => props.setPriceMin(event.target.value)}
+              value={props.priceMin}
             >
-              <option value="0">Any</option>
-              <option value="200">200</option>
-              <option value="400">400</option>
+              <option value={0}>Any</option>
+              <option value={200}>200</option>
+              <option value={400}>400</option>
             </select>
 
             <label htmlFor="priceMax">Min</label>
             <select
               name="priceMax"
               id="priceMax"
-              onChange={(event) => setPriceMax(event.target.value)}
-              value={priceMax}
+              onChange={(event) => props.setPriceMax(event.target.value)}
+              value={props.priceMax}
             >
-              <option value="0">Any</option>
-              <option value="200">200</option>
-              <option value="400">400</option>
+              <option value={0}>Any</option>
+              <option value={200}>200</option>
+              <option value={400}>400</option>
             </select>
           </div>
         </ModalSectionContainer>
