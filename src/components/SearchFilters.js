@@ -7,13 +7,40 @@ import {
   ModalTab,
   ModalSectionContainer,
   ModalSectionHeading,
+  ModalFooter,
+  StyledModalDropdown,
 } from "./styles/SearchFilters.styled";
 import Modal from "react-modal";
 import { useState } from "react";
-import { useEffect } from "react";
 
 const SearchFilters = (props) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const tabNames = ["Buy", "Rent", "Sold"];
+  const [activeTabName, setActiveTabName] = useState(tabNames[props.tab ?? 0]);
+
+  const Tabs = () => {
+    let tabCollection = [];
+    tabNames.forEach((tabName, index) => {
+      let styleOfActiveTab = () => {
+        if (tabName === activeTabName) {
+          return {
+            borderBottom: "2px solid red",
+            transition: "border-bottom 0.5s",
+          };
+        }
+      };
+      tabCollection.push(
+        <ModalTab
+          key={index}
+          onClick={() => setActiveTabName(tabName)}
+          style={styleOfActiveTab()}
+        >
+          {tabName}
+        </ModalTab>
+      );
+    });
+    return <>{tabCollection}</>;
+  };
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -23,37 +50,76 @@ const SearchFilters = (props) => {
     setModalIsOpen(false);
   };
 
-  const customStyles = {
+  const modalStyles = {
     content: {
-      top: "40%",
+      top: "50%",
       left: "50%",
       right: "auto",
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-around",
     },
   };
 
-  const generateRadioButton = (name, content) => {
+  const generateRadioButton = (idLabel, content) => {
     return (
-      <div>
-        <input type="radio" name={name} value={content} />
-        <label>{content}</label>
+      <div className="radioButton">
+        <input
+          type="radio"
+          id={idLabel}
+          name="propertyType"
+          value={content}
+          checked={props.propertyType === content}
+          onChange={() => props.setPropertyType(content)}
+        />
+        <label htmlFor={idLabel}>{content}</label>
       </div>
     );
   };
 
-  // useEffect(() => {
-  //   console.log(props.propertyType);
-  // }, [props.propertyType]);
+  const generatePriceOptions = () => {
+    const generateData = (startValue, increment, count) => {
+      let data = [startValue];
+      for (let i = 0; i < count; i++) {
+        data.push(startValue + increment * (i + 1));
+      }
+      return data;
+    };
+    // Based on tab selection populate the options
+    let optionsCollection = [];
+    const buyPriceData = generateData(100000, 50000, 10);
+    const rentPriceData = generateData(200, 50, 10);
 
-  // useEffect(() => {
-  //   console.log(props.priceMin);
-  // }, [props.priceMin]);
+    const currencyFormatter = new Intl.NumberFormat("en-AU", {
+      style: "currency",
+      currency: "AUD",
+      maximumFractionDigits: 0,
+    });
 
-  // useEffect(() => {
-  //   console.log(props.priceMax);
-  // }, [props.priceMax]);
+    if (activeTabName === "Rent") {
+      rentPriceData.forEach((element, index) => {
+        optionsCollection.push(
+          <option key={index} value={element}>
+            {currencyFormatter.format(element)}
+          </option>
+        );
+      });
+    } else {
+      // Buy/Sold
+      buyPriceData.forEach((element, index) => {
+        optionsCollection.push(
+          <option key={index} value={element}>
+            {currencyFormatter.format(element)}
+          </option>
+        );
+      });
+    }
+
+    return optionsCollection;
+  };
 
   return (
     <StyledSearchFilters>
@@ -61,87 +127,58 @@ const SearchFilters = (props) => {
         <img src={filters} alt="filters" />
         <div>Filters</div>
       </div>
+
       <Modal
         isOpen={modalIsOpen}
-        // onAfterOpen={afterOpenModal}
         ariaHideApp={false}
         onRequestClose={closeModal}
-        style={customStyles}
+        style={modalStyles}
         contentLabel="Example Modal"
       >
         <ModalHeading>Filters</ModalHeading>
-        {/* <ModalTabs>
-          <ModalTab>Buy</ModalTab>
-          <ModalTab>Rent</ModalTab>
-          <ModalTab>Sold</ModalTab>
-        </ModalTabs> */}
+        <ModalTabs>{Tabs()}</ModalTabs>
         <ModalSectionContainer>
           <ModalSectionHeading>Property Type</ModalSectionHeading>
-
-          <div className="propertyTypeRadioButtons">
-            {/* {generateRadioButton("propertyType", "House")}
-            {generateRadioButton("propertyType", "Apartment & Unit")} */}
-
-            <input
-              type="radio"
-              name="propertyType"
-              id="Any"
-              value="Any"
-              checked={props.propertyType === "Any"}
-              onChange={() => props.setPropertyType("Any")}
-            />
-            <label htmlFor="Any">Any</label>
-
-            <input
-              type="radio"
-              name="propertyType"
-              id="House"
-              value="House"
-              checked={props.propertyType === "House"}
-              onChange={() => props.setPropertyType("House")}
-            />
-            <label htmlFor="House">House</label>
-
-            <input
-              type="radio"
-              name="propertyType"
-              value="Apartment &amp; Unit"
-              id="ApartmentUnit"
-              checked={props.propertyType === "Apartment & Unit"}
-              onChange={() => props.setPropertyType("Apartment & Unit")}
-            />
-            <label htmlFor="ApartmentUnit">Apartment &amp; Unit</label>
-          </div>
+          <ul>
+            {generateRadioButton("Any", "Any")}
+            {generateRadioButton("House", "House")}
+            {generateRadioButton("ApartmentUnit", "Apartment & Unit")}
+          </ul>
         </ModalSectionContainer>
         <ModalSectionContainer>
           <ModalSectionHeading>Price</ModalSectionHeading>
-          <div className="price">
-            <label htmlFor="priceMin">Min</label>
-            <select
-              name="priceMin"
-              id="priceMin"
-              onChange={(event) => props.setPriceMin(event.target.value)}
-              value={props.priceMin}
-            >
-              <option value={0}>Any</option>
-              <option value={200}>200</option>
-              <option value={400}>400</option>
-            </select>
+          <ul>
+            <StyledModalDropdown>
+              <label htmlFor="priceMin">Min</label>
+              <select
+                name="priceMin"
+                id="priceMin"
+                onChange={(event) => props.setPriceMin(event.target.value)}
+                value={props.priceMin}
+              >
+                <option value={0}>Any</option>
+                {generatePriceOptions()}
+              </select>
+            </StyledModalDropdown>
 
-            <label htmlFor="priceMax">Min</label>
-            <select
-              name="priceMax"
-              id="priceMax"
-              onChange={(event) => props.setPriceMax(event.target.value)}
-              value={props.priceMax}
-            >
-              <option value={0}>Any</option>
-              <option value={200}>200</option>
-              <option value={400}>400</option>
-            </select>
-          </div>
+            <StyledModalDropdown>
+              <label htmlFor="priceMax">Max</label>
+              <select
+                name="priceMax"
+                id="priceMax"
+                onChange={(event) => props.setPriceMax(event.target.value)}
+                value={props.priceMax}
+              >
+                <option value={0}>Any</option>
+                {generatePriceOptions()}
+              </select>
+            </StyledModalDropdown>
+          </ul>
         </ModalSectionContainer>
-        <button onClick={closeModal}>Close</button>
+        <ModalFooter>
+          <button>Clear Filters</button>
+          <button>Search</button>
+        </ModalFooter>
       </Modal>
     </StyledSearchFilters>
   );
