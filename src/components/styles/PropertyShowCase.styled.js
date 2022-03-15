@@ -39,10 +39,12 @@ export const Agent = styled.div`
   justify-content: center;
   align-items: center;
   gap: 16px;
+
+  background-color: gainsboro;
   & img {
     width: 60px;
     height: 60px;
     border-radius: 50px;
-    margin-bottom: 10px;
+    margin: 10px;
   }
 `;

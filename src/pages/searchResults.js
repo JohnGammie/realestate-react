@@ -71,6 +71,10 @@ const SearchResults = () => {
     fetchSearchResults(sortQuery);
   };
 
+  const getRandomPropertyToShowCaseIndex = () => {
+    return Math.floor(Math.random() * pageContent.length);
+  };
+
   useEffect(() => {
     fetchSearchResults();
   }, []);
@@ -84,7 +88,9 @@ const SearchResults = () => {
           {generatePageContent()}
         </div>
         <div>
-          <PropertyShowCase />
+          <PropertyShowCase
+            property={pageContent[getRandomPropertyToShowCaseIndex()]}
+          />
         </div>
       </div>
       <Footer />
