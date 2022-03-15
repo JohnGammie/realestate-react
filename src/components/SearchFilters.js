@@ -149,7 +149,7 @@ const SearchFilters = (props) => {
           <ul>
             {generateRadioButton("Any", "Any")}
             {generateRadioButton("House", "House")}
-            {generateRadioButton("ApartmentUnit", "Apartment & Unit")}
+            {generateRadioButton("ApartmentUnit", "Apartment or Unit")}
           </ul>
         </ModalSectionContainer>
         <ModalSectionContainer>

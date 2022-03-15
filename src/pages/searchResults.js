@@ -8,12 +8,12 @@ const SearchResults = () => {
   const { state } = useLocation();
   const [pageContent, setpageContent] = useState([]);
 
-  const fetchSearchResults = async () => {
+  const fetchSearchResults = async (sortQuery) => {
     console.log(state.searchQuery);
     await fetch(
       process.env.REACT_APP_API_URL +
         "/search" +
-        `?searchType=${state.searchQuery.activeTabName}&suburbName=${state.searchQuery.suburbName}&propertyType=${state.searchQuery.propertyType}&priceMin=${state.searchQuery.priceMin}&priceMax=${state.searchQuery.priceMax}`,
+        `?searchType=${state.searchQuery.activeTabName}&suburbName=${state.searchQuery.suburbName}&propertyType=${state.searchQuery.propertyType}&priceMin=${state.searchQuery.priceMin}&priceMax=${state.searchQuery.priceMax}&sort=${sortQuery}`,
       {
         header: {
           Accept: "application/json",
@@ -42,7 +42,7 @@ const SearchResults = () => {
     return contentCollection;
   };
 
-  const mainColumnHeading = () => {
+  const generateMainColumnHeading = () => {
     let options = { Buy: "to Buy", Rent: "to Rent", Sold: "Sold" };
     let optionString = options[pageContent[0]?.listingType];
 
@@ -54,9 +54,20 @@ const SearchResults = () => {
           {pageContent[0]?.address.suburb.postcode}
         </h2>
         <p>{pageContent.length} results</p>
-        <div>Sort dropdown</div>
+        <div>
+          <label>Sort</label>{" "}
+          <select onChange={(event) => getSortedResults(event.target.value)}>
+            <option value="default">Most relevant</option>
+            <option value="ascending">Price (Lowest - Highest)</option>
+            <option value="descending">Price (Highest - Lowest)</option>
+          </select>
+        </div>
       </div>
     );
+  };
+
+  const getSortedResults = (sortQuery) => {
+    fetchSearchResults(sortQuery);
   };
 
   useEffect(() => {
@@ -68,7 +79,7 @@ const SearchResults = () => {
       <div className="refineSearch">Refine search filters</div>
       <div id="searchResultPageContent">
         <div>
-          {mainColumnHeading()}
+          {generateMainColumnHeading()}
           {generatePageContent()}
         </div>
         <div>
