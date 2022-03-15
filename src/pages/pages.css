@@ -57,6 +57,11 @@ body {
 #searchResultPageContent {
   display: grid;
   grid-template-columns: 2fr 1fr;
+  grid-gap: 16px;
   max-width: 60vw;
   margin: 0 auto;
+}
+
+#searchResultPage {
+  background-color: #f9f7fc;
 }

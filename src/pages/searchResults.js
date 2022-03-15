@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import SearchResultPropertyCard from "../components/searchResultPropertyCard";
 import "./pages.css";
 import Footer from "../components/Footer";
+import PropertyShowCase from "../components/PropertyShowCase";
 
 const SearchResults = () => {
   const { state } = useLocation();
@@ -75,7 +76,7 @@ const SearchResults = () => {
   }, []);
 
   return (
-    <div>
+    <div id="searchResultPage">
       <div className="refineSearch">Refine search filters</div>
       <div id="searchResultPageContent">
         <div>
@@ -83,7 +84,7 @@ const SearchResults = () => {
           {generatePageContent()}
         </div>
         <div>
-          Property Showcase. Choose 1 property at random to display here?
+          <PropertyShowCase />
         </div>
       </div>
       <Footer />

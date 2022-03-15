@@ -6,8 +6,9 @@ import {
   PropertyCardImage,
   PropertyCardText,
 } from "./styles/searchResultPropertyCard.styled";
-import image from "../images/home-search.jpg";
+import image1 from "../images/home-search.jpg";
 import image2 from "../images/flamingo-in-the-jungle.jpg";
+import image3 from "../images/jungle-babbler-perched-on-stump.jpg";
 import { currencyFormatter } from "../helpers/currencyFormatter";
 
 import Slider from "react-slick";
@@ -63,11 +64,15 @@ const SearchResultPropertyCard = (props) => {
     <PropertyCard>
       <Slider {...settings}>
         <PropertyCardImage
-          src={image}
+          src={image1}
           alt="imageplaceholder"
         ></PropertyCardImage>
         <PropertyCardImage
           src={image2}
+          alt="imageplaceholder"
+        ></PropertyCardImage>
+        <PropertyCardImage
+          src={image3}
           alt="imageplaceholder"
         ></PropertyCardImage>
       </Slider>
