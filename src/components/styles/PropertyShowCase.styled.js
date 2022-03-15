@@ -4,6 +4,7 @@ export const StyledPropertyShowCase = styled.div`
   width: 100%;
   border: 1px solid grey;
   border-radius: 10px;
+  margin-top: 12px;
   & img {
     max-width: 250px;
   }

@@ -4,6 +4,7 @@ import SearchResultPropertyCard from "../components/searchResultPropertyCard";
 import "./pages.css";
 import Footer from "../components/Footer";
 import PropertyShowCase from "../components/PropertyShowCase";
+import SearchResultsRefineFilters from "../components/SearchResultsRefineFilters";
 
 const SearchResults = () => {
   const { state } = useLocation();
@@ -81,7 +82,10 @@ const SearchResults = () => {
 
   return (
     <div id="searchResultPage">
-      <div className="refineSearch">Refine search filters</div>
+      <SearchResultsRefineFilters
+        searchQuery={state.searchQuery}
+        properties={pageContent}
+      />
       <div id="searchResultPageContent">
         <div>
           {generateMainColumnHeading()}
