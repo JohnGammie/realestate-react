@@ -53,3 +53,10 @@ body {
   text-decoration: none;
   color: blue;
 }
+
+#searchResultPageContent {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  max-width: 60vw;
+  margin: 0 auto;
+}

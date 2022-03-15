@@ -12,6 +12,7 @@ import {
 } from "./styles/SearchFilters.styled";
 import Modal from "react-modal";
 import { useState } from "react";
+import { currencyFormatter } from "../helpers/currencyFormatter";
 
 const SearchFilters = (props) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -92,12 +93,6 @@ const SearchFilters = (props) => {
     let optionsCollection = [];
     const buyPriceData = generateData(100000, 50000, 10);
     const rentPriceData = generateData(200, 50, 10);
-
-    const currencyFormatter = new Intl.NumberFormat("en-AU", {
-      style: "currency",
-      currency: "AUD",
-      maximumFractionDigits: 0,
-    });
 
     if (activeTabName === "Rent") {
       rentPriceData.forEach((element, index) => {
