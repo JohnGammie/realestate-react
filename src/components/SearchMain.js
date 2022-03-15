@@ -58,11 +58,13 @@ const SearchMain = (props) => {
   };
 
   const submitSearch = (calledByChild, filterTabName) => {
+    console.log(filterTabName);
     if (calledByChild) {
       console.log("calledByChild");
       setActiveTabName(filterTabName); // setState is async, so below logging of state doesn't get this straight away
     }
     debugOutputSearchState();
+    searchQuery.activeTabName = filterTabName;
     navigate("/searchResults", { state: { searchQuery } });
   };
 
