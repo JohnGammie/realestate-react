@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import HeadingSummary from "../components/PropertyPage/HeadingSummary";
+import "./pages.css";
+import image1 from "../images/home-search.jpg";
 
 const Property = () => {
   const [searchParams] = useSearchParams();
@@ -30,35 +33,29 @@ const Property = () => {
   if (responseData) {
     return (
       <div>
-        <div
-          className="top"
-          style={{ display: "grid", gridTemplateColumns: "1fr 2fr" }}
-        >
-          <div className="left">
-            <div className="address">
-              {responseData.address.streetNumber},
-              {responseData.address.streetName} ,{" "}
-              {responseData.address.suburb.name} ,{" "}
-              {responseData.address.suburb.state} ,{" "}
-              {responseData.address.suburb.postcode}
+        <HeadingSummary
+          address={responseData.address}
+          price={responseData.price}
+          image1={image1}
+          image2={image1}
+          image3={image1}
+        ></HeadingSummary>
+        <div className="sections">
+          <div className="section">
+            <div className="MainColumn" style={{ display: "flex" }}>
+              <div className="bodyContent">
+                <ul>
+                  <li>propertyTitle (need to add database)</li>
+                  <li>propertyContent (need to add database)</li>
+                  <li>
+                    property features section.(Random 3 of X features [just keep
+                    it all front end?], use an svg)
+                  </li>
+                </ul>
+              </div>
+              <div className="AgentCard">Agent John Doe</div>
             </div>
-            {responseData.price}
-            <button>Contact Agent</button>
           </div>
-          <div className="Images">Images</div>
-        </div>
-        <div className="MainColumn" style={{ display: "flex" }}>
-          <div className="bodyContent">
-            <ul>
-              <li>propertyTitle (need to add database)</li>
-              <li>propertyContent (need to add database)</li>
-              <li>
-                property features section.(Random 3 of X features [just keep it
-                all front end?], use an svg)
-              </li>
-            </ul>
-          </div>
-          <div className="AgentCard">Agent John Doe</div>
         </div>
       </div>
     );
