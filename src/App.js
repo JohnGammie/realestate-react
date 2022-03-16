@@ -9,6 +9,7 @@ import "./styles.css";
 import NotFound from "./pages/NotFound";
 import Sold from "./pages/sold";
 import SearchResults from "./pages/searchResults";
+import Property from "./pages/property";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/sign-in" element={<SignIn />}></Route>
           <Route path="/join" element={<Join />}></Route>
           <Route path="/searchResults" element={<SearchResults />}></Route>
+          <Route path="/property" element={<Property />}></Route>
         </Routes>
       </Router>
     </div>

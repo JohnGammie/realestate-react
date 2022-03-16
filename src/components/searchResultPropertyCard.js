@@ -14,8 +14,11 @@ import { currencyFormatter } from "../helpers/currencyFormatter";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useNavigate, createSearchParams } from "react-router-dom";
 
 const SearchResultPropertyCard = (props) => {
+  const navigate = useNavigate();
+
   const addressProcess = () => {
     return (
       <>
@@ -32,6 +35,11 @@ const SearchResultPropertyCard = (props) => {
   const handleClick = () => {
     console.log("clicked");
     // redirect to page, new page can re-request property data with props.data.id
+    let params = { id: props.data._id };
+    navigate({
+      pathname: "/property",
+      search: `?${createSearchParams(params)}`,
+    });
   };
 
   const NextArrowStyle = (props) => {
