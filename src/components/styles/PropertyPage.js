@@ -82,3 +82,16 @@ export const AgentCardDetails = styled.div`
     background-color: darkred;
   }
 `;
+
+export const Feature = styled.div`
+  display: flex;
+  gap: 8px;
+`;
+
+export const StyledPropertyFeatures = styled.div`
+  font-weight: 100;
+
+  li {
+    list-style: none;
+  }
+`;

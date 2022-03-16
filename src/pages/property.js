@@ -51,7 +51,7 @@ const Property = () => {
               gap: "16px",
             }}
           >
-            <BodyContent />
+            <BodyContent description={responseData.description} />
             <div>
               <AgentCard image1={image1} agent={responseData.agent} />
             </div>
