@@ -33,7 +33,6 @@ const SearchResultPropertyCard = (props) => {
   };
 
   const handleClick = () => {
-    console.log("clicked");
     // redirect to page, new page can re-request property data with props.data.id
     let params = { id: props.data._id };
     navigate({

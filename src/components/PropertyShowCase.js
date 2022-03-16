@@ -9,8 +9,10 @@ import {
 import image1 from "../images/home-search.jpg";
 import image2 from "../images/flamingo-in-the-jungle.jpg";
 import image3 from "../images/jungle-babbler-perched-on-stump.jpg";
+import { createSearchParams, useNavigate } from "react-router-dom";
 
 const PropertyShowCase = (props) => {
+  const navigate = useNavigate();
   if (props.property) {
     let streetAddress =
       props.property.address.streetNumber +
@@ -20,8 +22,12 @@ const PropertyShowCase = (props) => {
     let agent = props.property.agent.name ?? "John Doe"; // @TODO agent not in the property database yet
 
     const viewProperty = () => {
-      console.log("clicked view property showcase");
-      // @TODO imeplement view property showcase
+      // redirect to page, new page can re-request property data with props.data.id
+      let params = { id: props.property._id };
+      navigate({
+        pathname: "/property",
+        search: `?${createSearchParams(params)}`,
+      });
     };
 
     return (
