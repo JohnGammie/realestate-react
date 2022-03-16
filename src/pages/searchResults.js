@@ -102,6 +102,8 @@ const SearchResults = () => {
         setPriceMax={setPriceMax}
         submit={() => fetchSearchResults()}
         activeTabName={state.searchQuery.activeTabName}
+        suburbName={suburbName}
+        setSuburbName={setSuburbName}
       />
       <div id="searchResultPageContent">
         <div>

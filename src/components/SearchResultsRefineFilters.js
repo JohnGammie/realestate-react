@@ -8,6 +8,7 @@ import {
 import magnify from "../images/magnify.svg";
 import { useState } from "react";
 import SearchFilterModal from "./SearchFilterModal";
+import SearchInput from "./SearchInput";
 
 const SearchResultsRefineFilters = (props) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -31,8 +32,10 @@ const SearchResultsRefineFilters = (props) => {
         </SummarySection>
         <FilterSection>
           <FilterSubSection>
-            <img src={magnify} alt="" />
-            <p>Address info</p>
+            <SearchInput
+              input={props.suburbName}
+              setInput={props.setSuburbName}
+            />
           </FilterSubSection>
           <FilterSubSection>
             <div onClick={openModal}>Filter properties</div>
