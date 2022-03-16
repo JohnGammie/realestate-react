@@ -4,6 +4,7 @@ export const StyledHeadingSummary = styled.div`
   display: grid;
   grid-template-columns: 1fr 3fr;
   background-color: #f9f7fc;
+  margin-bottom: 24px;
 `;
 
 export const HeadingDetails = styled.div`
@@ -42,5 +43,42 @@ export const SmallerImages = styled.div`
 
   img {
     height: 100%;
+  }
+`;
+
+export const StyledAgentCard = styled.div`
+  border: 1px solid grey;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 12px;
+`;
+
+export const AgentCardImage = styled.div`
+  img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+  }
+`;
+
+export const AgentCardDetails = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  & button {
+    width: 100%;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    font-size: 24px;
+    padding: 4px 24px;
+  }
+
+  & button:hover {
+    background-color: darkred;
   }
 `;

@@ -4,6 +4,8 @@ import { useSearchParams } from "react-router-dom";
 import HeadingSummary from "../components/PropertyPage/HeadingSummary";
 import "./pages.css";
 import image1 from "../images/home-search.jpg";
+import BodyContent from "../components/PropertyPage/BodyContent";
+import AgentCard from "../components/PropertyPage/AgentCard";
 
 const Property = () => {
   const [searchParams] = useSearchParams();
@@ -41,19 +43,17 @@ const Property = () => {
           image3={image1}
         ></HeadingSummary>
         <div className="sections">
-          <div className="section">
-            <div className="MainColumn" style={{ display: "flex" }}>
-              <div className="bodyContent">
-                <ul>
-                  <li>propertyTitle (need to add database)</li>
-                  <li>propertyContent (need to add database)</li>
-                  <li>
-                    property features section.(Random 3 of X features [just keep
-                    it all front end?], use an svg)
-                  </li>
-                </ul>
-              </div>
-              <div className="AgentCard">Agent John Doe</div>
+          <div
+            className="section"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "2.5fr 1fr",
+              gap: "16px",
+            }}
+          >
+            <BodyContent />
+            <div>
+              <AgentCard image1={image1} />
             </div>
           </div>
         </div>
