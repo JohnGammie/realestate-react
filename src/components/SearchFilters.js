@@ -1,13 +1,19 @@
 import React from "react";
 import filters from "../images/filter.svg";
 import { StyledSearchFilters } from "./styles/SearchFilters.styled";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SearchFilterModal from "./SearchFilterModal";
 
 const SearchFilters = (props) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [activeTabName, setActiveTabName] = useState(props.activeTabName);
+
+  useEffect(() => {
+    console.log("search filters: " + activeTabName);
+  }, [activeTabName]);
 
   const openModal = () => {
+    setActiveTabName(props.activeTabName);
     setModalIsOpen(true);
   };
 
@@ -32,6 +38,7 @@ const SearchFilters = (props) => {
         priceMax={props.priceMax}
         setPriceMax={(obj) => props.setPriceMax(obj)}
         submitSearch={props.submitSearch}
+        activeTabName={activeTabName}
       />
     </StyledSearchFilters>
   );

@@ -64,7 +64,7 @@ const SearchMain = (props) => {
       setActiveTabName(filterTabName); // setState is async, so below logging of state doesn't get this straight away
     }
     debugOutputSearchState();
-    searchQuery.activeTabName = filterTabName;
+    searchQuery.activeTabName = filterTabName ?? activeTabName;
     navigate("/searchResults", { state: { searchQuery } });
   };
 
@@ -81,6 +81,7 @@ const SearchMain = (props) => {
           priceMax={priceMax}
           setPriceMax={(obj) => setPriceMax(obj)}
           submitSearch={submitSearch}
+          activeTabName={activeTabName}
         />
         <SearchButton onClick={() => submitSearch()}>Search</SearchButton>
       </SearchDetailsContainer>

@@ -11,15 +11,10 @@ import {
 } from "./styles/SearchFilters.styled";
 import Modal from "react-modal";
 import { currencyFormatter } from "../helpers/currencyFormatter";
-import { useEffect } from "react";
 
 const SearchFilterModal = (props) => {
   const tabNames = ["Buy", "Rent", "Sold"];
   const [activeTabName, setActiveTabName] = useState(tabNames[props.tab ?? 0]);
-
-  useEffect(() => {
-    console.log("activeTabName has changed to: " + activeTabName);
-  }, [activeTabName]);
 
   const modalStyles = {
     content: {

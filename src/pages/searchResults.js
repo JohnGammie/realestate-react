@@ -9,13 +9,22 @@ import SearchResultsRefineFilters from "../components/SearchResultsRefineFilters
 const SearchResults = () => {
   const { state } = useLocation();
   const [pageContent, setpageContent] = useState([]);
+  const [activeTabName, setActiveTabName] = useState(
+    state.searchQuery.activeTabName
+  );
+  const [suburbName, setSuburbName] = useState(state.searchQuery.suburbName);
+  const [propertyType, setPropertyType] = useState(
+    state.searchQuery.propertyType
+  );
+  const [priceMin, setPriceMin] = useState(state.searchQuery.priceMin);
+  const [priceMax, setPriceMax] = useState(state.searchQuery.priceMax);
 
   const fetchSearchResults = async (sortQuery) => {
     console.log(state.searchQuery);
     await fetch(
       process.env.REACT_APP_API_URL +
         "/search" +
-        `?searchType=${state.searchQuery.activeTabName}&suburbName=${state.searchQuery.suburbName}&propertyType=${state.searchQuery.propertyType}&priceMin=${state.searchQuery.priceMin}&priceMax=${state.searchQuery.priceMax}&sort=${sortQuery}`,
+        `?searchType=${activeTabName}&suburbName=${suburbName}&propertyType=${propertyType}&priceMin=${priceMin}&priceMax=${priceMax}&sort=${sortQuery}`,
       {
         header: {
           Accept: "application/json",
@@ -85,6 +94,14 @@ const SearchResults = () => {
       <SearchResultsRefineFilters
         searchQuery={state.searchQuery}
         properties={pageContent}
+        propertyType={propertyType}
+        setPropertyType={setPropertyType}
+        priceMin={priceMin}
+        setPriceMin={setPriceMin}
+        priceMax={priceMax}
+        setPriceMax={setPriceMax}
+        submit={() => fetchSearchResults()}
+        activeTabName={state.searchQuery.activeTabName}
       />
       <div id="searchResultPageContent">
         <div>
