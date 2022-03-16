@@ -53,7 +53,7 @@ const Property = () => {
           >
             <BodyContent />
             <div>
-              <AgentCard image1={image1} />
+              <AgentCard image1={image1} agent={responseData.agent} />
             </div>
           </div>
         </div>

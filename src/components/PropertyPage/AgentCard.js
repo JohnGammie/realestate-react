@@ -12,11 +12,10 @@ const AgentCard = (props) => {
         <img src={props.image1} alt="" />
       </AgentCardImage>
       <AgentCardDetails>
-        <div>John Doe</div>
-        <div>5484798749849</div>
+        <div>{props.agent.name}</div>
+        <div>{props.agent.phoneNumber}</div>
         <button>Contact</button>
       </AgentCardDetails>
-      
     </StyledAgentCard>
   );
 };

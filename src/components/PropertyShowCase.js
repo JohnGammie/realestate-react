@@ -17,7 +17,7 @@ const PropertyShowCase = (props) => {
         " " +
         props?.property?.address?.streetName ?? "28  Test St";
     let suburb = props.property.address.suburb.name ?? "Test suburb";
-    let agent = props.agent ?? "John Doe"; // @TODO agent not in the property database yet
+    let agent = props.property.agent.name ?? "John Doe"; // @TODO agent not in the property database yet
 
     const viewProperty = () => {
       console.log("clicked view property showcase");
