@@ -39,6 +39,7 @@ const SearchFilters = (props) => {
         setPriceMax={(obj) => props.setPriceMax(obj)}
         submitSearch={props.submitSearch}
         activeTabName={activeTabName}
+        setActiveTabName={props.setActiveTabName}
       />
     </StyledSearchFilters>
   );

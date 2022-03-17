@@ -22,9 +22,9 @@ const SearchResultsRefineFilters = (props) => {
     setModalIsOpen(false);
   };
 
-  const submitSearch = () => {
+  const submitSearch = (tabName) => {
     let filterParams = {
-      activeTabName: props.activeTabName,
+      activeTabName: tabName,
       suburbName: props.suburbName,
       propertyType: props.propertyType,
       priceMin: props.priceMin,
@@ -66,9 +66,9 @@ const SearchResultsRefineFilters = (props) => {
           setPriceMin={(obj) => props.setPriceMin(obj)}
           priceMax={props.priceMax}
           setPriceMax={(obj) => props.setPriceMax(obj)}
-          submitSearch={() => {
+          submitSearch={(calledByChild, tabName) => {
             closeModal();
-            submitSearch();
+            submitSearch(tabName);
           }}
           activeTabName={props.activeTabName}
           setActiveTabName={props.setActiveTabName}

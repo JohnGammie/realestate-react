@@ -44,7 +44,6 @@ const SearchResults = () => {
     let contentCollection = [];
 
     pageContent.forEach((searchResult, index) => {
-      console.log(searchResult);
       contentCollection.push(
         // @TODO generate meaningful components from this json data
         <SearchResultPropertyCard

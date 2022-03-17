@@ -14,7 +14,7 @@ import { currencyFormatter } from "../helpers/currencyFormatter";
 
 const SearchFilterModal = (props) => {
   const tabNames = ["Buy", "Rent", "Sold"];
-  const [activeTabName, setActiveTabName] = useState(tabNames[props.tab ?? 0]);
+  const [activeTabName, setActiveTabName] = useState(props.activeTabName);
 
   const modalStyles = {
     content: {
@@ -44,7 +44,10 @@ const SearchFilterModal = (props) => {
       tabCollection.push(
         <ModalTab
           key={index}
-          onClick={() => setActiveTabName(tabName)}
+          onClick={() => {
+            setActiveTabName(tabName);
+            props.setActiveTabName(tabName);
+          }}
           style={styleOfActiveTab()}
         >
           {tabName}
@@ -107,6 +110,7 @@ const SearchFilterModal = (props) => {
 
   const clearFilters = () => {
     setActiveTabName(tabNames[props.tab ?? 0]);
+    props.setActiveTabName(tabNames[props.tab ?? 0]);
 
     let priceMin = document.getElementById("priceMin");
     priceMin.selectedIndex = 0;

@@ -85,6 +85,7 @@ const SearchMain = (props) => {
           setPriceMax={(obj) => setPriceMax(obj)}
           submitSearch={submitSearch}
           activeTabName={activeTabName}
+          setActiveTabName={setActiveTabName}
         />
         <SearchButton onClick={() => submitSearch()}>Search</SearchButton>
       </SearchDetailsContainer>
