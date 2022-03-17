@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import SearchResultPropertyCard from "../components/searchResultPropertyCard";
 import "./pages.css";
 import Footer from "../components/Footer";
@@ -7,20 +7,23 @@ import PropertyShowCase from "../components/PropertyShowCase";
 import SearchResultsRefineFilters from "../components/SearchResultsRefineFilters";
 
 const SearchResults = () => {
-  const { state } = useLocation();
+  const [searchParams] = useSearchParams();
   const [pageContent, setpageContent] = useState([]);
   const [activeTabName, setActiveTabName] = useState(
-    state.searchQuery.activeTabName
+    searchParams.get("activeTabName")
   );
-  const [suburbName, setSuburbName] = useState(state.searchQuery.suburbName);
+  const [suburbName, setSuburbName] = useState(searchParams.get("suburbName"));
   const [propertyType, setPropertyType] = useState(
-    state.searchQuery.propertyType
+    searchParams.get("propertyType")
   );
-  const [priceMin, setPriceMin] = useState(state.searchQuery.priceMin);
-  const [priceMax, setPriceMax] = useState(state.searchQuery.priceMax);
+  const [priceMin, setPriceMin] = useState(searchParams.get("priceMin"));
+  const [priceMax, setPriceMax] = useState(searchParams.get("priceMax"));
 
   const fetchSearchResults = async (sortQuery) => {
-    console.log(state.searchQuery);
+    if (!sortQuery) {
+      document.getElementById("sortDropdown").selectedIndex = 0; // Data comes in unsorted. Reset the sorting options to default
+    }
+
     await fetch(
       process.env.REACT_APP_API_URL +
         "/search" +
@@ -67,7 +70,10 @@ const SearchResults = () => {
         <p>{pageContent.length} results</p>
         <div>
           <label>Sort</label>{" "}
-          <select onChange={(event) => getSortedResults(event.target.value)}>
+          <select
+            id="sortDropdown"
+            onChange={(event) => getSortedResults(event.target.value)}
+          >
             <option value="default">Most relevant</option>
             <option value="ascending">Price (Lowest - Highest)</option>
             <option value="descending">Price (Highest - Lowest)</option>
@@ -92,7 +98,6 @@ const SearchResults = () => {
   return (
     <div id="searchResultPage">
       <SearchResultsRefineFilters
-        searchQuery={state.searchQuery}
         properties={pageContent}
         propertyType={propertyType}
         setPropertyType={setPropertyType}
@@ -101,9 +106,12 @@ const SearchResults = () => {
         priceMax={priceMax}
         setPriceMax={setPriceMax}
         submit={() => fetchSearchResults()}
-        activeTabName={state.searchQuery.activeTabName}
+        activeTabName={searchParams.get("activeTabName")}
+        setActiveTabName={setActiveTabName}
         suburbName={suburbName}
         setSuburbName={setSuburbName}
+        searchParams={searchParams}
+        refetchData={fetchSearchResults}
       />
       <div id="searchResultPageContent">
         <div>

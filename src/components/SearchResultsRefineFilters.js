@@ -5,12 +5,13 @@ import {
   FilterSection,
   FilterSubSection,
 } from "./styles/SearchResultsRefineFilters.styled";
-import magnify from "../images/magnify.svg";
 import { useState } from "react";
 import SearchFilterModal from "./SearchFilterModal";
 import SearchInput from "./SearchInput";
+import { createSearchParams, useNavigate } from "react-router-dom";
 
 const SearchResultsRefineFilters = (props) => {
+  const navigate = useNavigate();
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const openModal = () => {
@@ -21,12 +22,27 @@ const SearchResultsRefineFilters = (props) => {
     setModalIsOpen(false);
   };
 
+  const submitSearch = () => {
+    let filterParams = {
+      activeTabName: props.activeTabName,
+      suburbName: props.suburbName,
+      propertyType: props.propertyType,
+      priceMin: props.priceMin,
+      priceMax: props.priceMax,
+    };
+    navigate({
+      pathname: "/searchResults",
+      search: `?${createSearchParams(filterParams)}`,
+    });
+    props.refetchData();
+  };
+
   // @TODO make summary items clickable e.g. BUY > VIC > SUBURB each item will link to useful pages
   if (props.properties.length > 0) {
     return (
       <div>
         <SummarySection>
-          {props.searchQuery.activeTabName} <SummaryGt>&gt;</SummaryGt>
+          {props.activeTabName} <SummaryGt>&gt;</SummaryGt>
           {props.properties[0].address.suburb.state} <SummaryGt>&gt;</SummaryGt>
           {props.properties[0].address.suburb.name}
         </SummarySection>
@@ -51,10 +67,11 @@ const SearchResultsRefineFilters = (props) => {
           priceMax={props.priceMax}
           setPriceMax={(obj) => props.setPriceMax(obj)}
           submitSearch={() => {
-            props.submit();
             closeModal();
+            submitSearch();
           }}
           activeTabName={props.activeTabName}
+          setActiveTabName={props.setActiveTabName}
         />
       </div>
     );

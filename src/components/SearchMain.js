@@ -9,7 +9,7 @@ import {
 import SearchInput from "./SearchInput";
 import SearchFilters from "./SearchFilters";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { createSearchParams, useNavigate } from "react-router-dom";
 
 const SearchMain = (props) => {
   const navigate = useNavigate();
@@ -65,7 +65,10 @@ const SearchMain = (props) => {
     }
     debugOutputSearchState();
     searchQuery.activeTabName = filterTabName ?? activeTabName;
-    navigate("/searchResults", { state: { searchQuery } });
+    navigate({
+      pathname: "/searchResults",
+      search: `?${createSearchParams(searchQuery)}`,
+    });
   };
 
   return (
