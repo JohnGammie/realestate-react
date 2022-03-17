@@ -4,21 +4,21 @@
       "title": "Explore suburb profiles",
       "content": "Check out different neighbourhoods and find one that's right for you",
       "linkText": "Research suburbs",
-      "linkUrl": "/buy",
+      "linkUrl": "/research-suburbs",
       "image": "/assets/images/closeup-of-single-open-jungle-flower.jpg"
     },
     {
       "title": "Need help with a mortgage?",
       "content": "Compare your finance options to make an informed call.",
       "linkText": "Explore home loans",
-      "linkUrl": "/buy",
+      "linkUrl": "/explore-home-loans",
       "image": "/assets/images/flamingo-in-the-jungle.jpg"
     },
     {
       "title": "Get estimated property prices",
       "content": "See how much a property's worth, whether you own it or want to buy it.",
       "linkText": "Check property values",
-      "linkUrl": "/buy",
+      "linkUrl": "/estimate-property-prices",
       "image": "/assets/images/fruit-tree-grows-in-jungle.jpg"
     }
   ],
@@ -27,44 +27,44 @@
       "title": "Set up your renter profile",
       "content": "Are you a tenant looking for a new place? Get yourself ready to apply online.",
       "linkText": "Create a profile",
-      "linkUrl": "/buy",
+      "linkUrl": "/create-a-profile",
       "image": "/assets/images/house-home-in-jungle.jpg"
     },
     {
       "title": "Find a tenant",
       "content": "List your property for rent through an agent or on your own.",
       "linkText": "Advertise your rental property",
-      "linkUrl": "/buy",
+      "linkUrl": "/advertise-rental-property",
       "image": "/assets/images/jungle-babbler-perched-on-stump.jpg"
     },
     {
       "title": "Looking for a flatemate?",
       "content": "Move into a new sharehouse, or find someone to join yours",
       "linkText": "Head to flatmates.com.au",
-      "linkUrl": "/buy",
+      "linkUrl": "/look-for-flatmates",
       "image": "/assets/images/lantern-lit-jungle-hut.jpg"
     }
   ],
   "Selling": [
     {
-      "title": "Check this week's solid prices",
+      "title": "Check this week's sold prices",
       "content": "Stay in the loop with the latest clearance rates and recent sales.",
       "linkText": "See auction results",
-      "linkUrl": "/buy",
+      "linkUrl": "/this-weeks-sold-prices",
       "image": "/assets/images/man-wearing-loose-clothing-walks-through-jungle.jpg"
     },
     {
       "title": "Decide whether to sell or stay",
       "content": "Wonder if now's a good time to sell? See your options",
       "linkText": "Read the selling guide",
-      "linkUrl": "/buy",
+      "linkUrl": "/sell-or-stay",
       "image": "/assets/images/mayan-ruins-in-jungle.jpg"
     },
     {
       "title": "Thinking about refinancing?",
       "content": "Calculate your equity to weigh up your financial options.",
       "linkText": "Use the refinance calculator",
-      "linkUrl": "/buy",
+      "linkUrl": "/refinancing",
       "image": "/assets/images/a-baby-monkey-sits-on-branches-and-smiles.jpg"
     }
   ],
@@ -73,21 +73,21 @@
       "title": "Delve into market data",
       "content": "Stay on top of real estate trends written by economists and property experts.",
       "linkText": "Research the propety market",
-      "linkUrl": "/buy",
+      "linkUrl": "/market-data",
       "image": "/assets/images/proud-parrot-on-jungle-tree-branch.jpg"
     },
     {
       "title": "Real estate how to's",
       "content": "Read up on the ins and  outs of any property process",
       "linkText": "Explore propery guides",
-      "linkUrl": "/buy",
+      "linkUrl": "/real-estate-how-to",
       "image": "/assets/images/walking-through-mexican-jungle.jpg"
     },
     {
       "title": "Get your finances in order",
       "content": "Use our calculators to understand your financial position and options.",
       "linkText": "Browse home loan calculators",
-      "linkUrl": "/buy",
+      "linkUrl": "/organising-finances",
       "image": "/assets/images/waterfalls-in-the-jungle-as-a-volcano-smokes-in-the-distance.jpg"
     }
   ]
