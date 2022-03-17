@@ -33,6 +33,10 @@ export const Description = styled.div`
     border-radius: 5px;
     padding: 8px 16px;
   }
+
+  & button:hover {
+    background-color: gainsboro;
+  }
 `;
 
 export const Agent = styled.div`
