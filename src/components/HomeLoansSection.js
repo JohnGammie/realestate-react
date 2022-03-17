@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import image from "../images/home-search.jpg";
 import navbarIcon from "../images/window.svg";
 import {
@@ -11,6 +12,12 @@ import {
 } from "./styles/HomeLoansSection.styled";
 
 const HomeLoansSection = () => {
+  const navigate = useNavigate();
+
+  const navigateToHomeLoansPage = () => {
+    navigate("/home-loans");
+  };
+
   return (
     <StyledHomeLoansSection>
       <StyledHomeLoansSectionLeft>
@@ -22,7 +29,7 @@ const HomeLoansSection = () => {
           Realestate
         </Logo>
         <Content>Explore your home loan options</Content>
-        <Button>Compare Loans</Button>
+        <Button onClick={navigateToHomeLoansPage}>Compare Loans</Button>
       </StyledHomeLoansSectionRight>
     </StyledHomeLoansSection>
   );
