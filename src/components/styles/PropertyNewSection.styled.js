@@ -7,11 +7,13 @@ export const StyledCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin: 4px;
+  height: 200px;
 
   & img {
     max-width: 80%;
-    max-height: 200px;
+    max-height: 70%;
   }
 
   &:hover {

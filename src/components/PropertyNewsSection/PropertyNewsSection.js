@@ -28,33 +28,39 @@ const PropertyNewsSection = () => {
     <Carousel {...settings}>
       <Card
         image="/assets/images/a-baby-monkey-sits-on-branches-and-smiles.jpg"
-        title="Title 1"
+        title="Melbourne prices continue to rise"
         readTime="4 mins read"
+        linkUrl="/melbourne-prices"
       />
       <Card
-        image="/assets/images/a-baby-monkey-sits-on-branches-and-smiles.jpg"
-        title="Title 2"
-        readTime="4 mins read"
+        image="/assets/images/closeup-of-single-open-jungle-flower.jpg"
+        title="Award winning designs now available"
+        readTime="2 mins read"
+        linkUrl="/award-winning-designs"
       />
       <Card
-        image="/assets/images/a-baby-monkey-sits-on-branches-and-smiles.jpg"
-        title="Title 3"
-        readTime="4 mins read"
+        image="/assets/images/lantern-lit-jungle-hut.jpg"
+        title="Market Watch: Trouble in Sydney"
+        readTime="3 mins read"
+        linkUrl="/market-watch-sydney"
       />
       <Card
-        image="/assets/images/a-baby-monkey-sits-on-branches-and-smiles.jpg"
-        title="Title 4"
+        image="/assets/images/man-wearing-loose-clothing-walks-through-jungle.jpg"
+        title="Impact of South East Queensland floods"
         readTime="4 mins read"
+        linkUrl="/impact-of-qld-floods"
       />
       <Card
-        image="/assets/images/a-baby-monkey-sits-on-branches-and-smiles.jpg"
-        title="Title 5"
-        readTime="4 mins read"
+        image="/assets/images/jungle-babbler-perched-on-stump.jpg"
+        title="Ideas for your next investment"
+        readTime="5 mins read"
+        linkUrl="/ideas-for-investment"
       />
       <Card
-        image="/assets/images/a-baby-monkey-sits-on-branches-and-smiles.jpg"
-        title="Title 6"
-        readTime="4 mins read"
+        image="/assets/images/proud-parrot-on-jungle-tree-branch.jpg"
+        title="How to Downsize"
+        readTime="6 mins read"
+        linkUrl="/downsize"
       />
     </Carousel>
   );

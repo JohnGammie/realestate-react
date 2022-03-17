@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   CardTitle,
   CardReadTime,
@@ -6,15 +7,16 @@ import {
 } from "../styles/PropertyNewSection.styled";
 
 const Card = (props) => {
+  const navigate = useNavigate();
+
   const handleCardClick = () => {
-    console.log(`card clicked: ${props.title}`);
-    // @TODO redirect to article
+    navigate(props.linkUrl);
   };
 
   return (
-    <StyledCard onClick={() => handleCardClick()}>
+    <StyledCard>
       <img src={props.image} alt="" />
-      <CardTitle>{props.title}</CardTitle>
+      <CardTitle onClick={() => handleCardClick()}>{props.title}</CardTitle>
       <CardReadTime>{props.readTime}</CardReadTime>
     </StyledCard>
   );
