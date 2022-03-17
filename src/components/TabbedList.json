@@ -1,88 +1,83 @@
 {
   "tabs": [
     {
-      "tabName": "Real estate",
+      "tabName": "Buy real estate",
       "tabDescription": "Real estate in Australia",
       "tabLinks": [
         {
-          "description": "Real estate NSW",
-          "url": "todo.create.this.resource"
+          "description": "Real estate Box Hill",
+          "url": "/searchResults?activeTabName=Buy&suburbName=Box+Hill&propertyType=Any&priceMin=0&priceMax=0"
         },
         {
-          "description": "Real estate VIC",
-          "url": "todo.create.this.resource"
+          "description": "Real estate South Yarra",
+          "url": "/searchResults?activeTabName=Buy&suburbName=South+Yarra&propertyType=Any&priceMin=0&priceMax=0"
         },
         {
-          "description": "Real estate QLD",
-          "url": "todo.create.this.resource"
-        },
-        { "description": "Real estate WA", "url": "todo.create.this.resource" },
-        { "description": "Real estate SA", "url": "todo.create.this.resource" },
-        {
-          "description": "Real estate TAS",
-          "url": "todo.create.this.resource"
+          "description": "Real estate Carlton",
+          "url": "/searchResults?activeTabName=Buy&suburbName=Carlton&propertyType=Any&priceMin=0&priceMax=0"
         },
         {
-          "description": "Real estate ACT",
-          "url": "todo.create.this.resource"
-        },
-        { "description": "Real estate NT", "url": "todo.create.this.resource" },
-        {
-          "description": "Real estate Sydney",
-          "url": "todo.create.this.resource"
-        },
-        {
-          "description": "Real estate Melbourne",
-          "url": "todo.create.this.resource"
-        },
-        {
-          "description": "Real estate Brisbane",
-          "url": "todo.create.this.resource"
-        },
-        {
-          "description": "Real estate Perth",
-          "url": "todo.create.this.resource"
-        },
-        {
-          "description": "Real estate Adelaide",
-          "url": "todo.create.this.resource"
-        },
-        {
-          "description": "Real estate Hobart",
-          "url": "todo.create.this.resource"
-        },
-        {
-          "description": "Real estate Cranberra",
-          "url": "todo.create.this.resource"
-        },
-        {
-          "description": "Real estate Darwin",
-          "url": "todo.create.this.resource"
+          "description": "Real estate Fitzroy",
+          "url": "/searchResults?activeTabName=Buy&suburbName=Fitzroy&propertyType=Any&priceMin=0&priceMax=0"
         }
       ]
     },
     {
-      "tabName": "New homes",
-      "tabDescription": "New homes in Australia",
+      "tabName": "Rental properties",
+      "tabDescription": "Rental properties in Australia",
       "tabLinks": [
-        { "description": "New homes NSW", "url": "todo.create.this.resource" },
-        { "description": "New homes VIC", "url": "todo.create.this.resource" }
+        {
+          "description": "Rent in Box Hill",
+          "url": "/searchResults?activeTabName=Rent&suburbName=Box+Hill&propertyType=Any&priceMin=0&priceMax=0"
+        },
+        {
+          "description": "Rent in South Yarra",
+          "url": "/searchResults?activeTabName=Rent&suburbName=South+Yarra&propertyType=Any&priceMin=0&priceMax=0"
+        },
+        {
+          "description": "Rent in Carlton",
+          "url": "/searchResults?activeTabName=Rent&suburbName=Carlton&propertyType=Any&priceMin=0&priceMax=0"
+        },
+        {
+          "description": "Rent in Fitzroy",
+          "url": "/searchResults?activeTabName=Rent&suburbName=Fitzroy&propertyType=Any&priceMin=0&priceMax=0"
+        }
       ]
     },
     {
-      "tabName": "Popular areas",
-      "tabDescription": "Browse popular areas",
+      "tabName": "Sold real estate",
+      "tabDescription": "Properties sold in Australia",
       "tabLinks": [
-        { "description": "New homes NSW", "url": "todo.create.this.resource" },
-        { "description": "New homes VIC", "url": "todo.create.this.resource" }
+        {
+          "description": "Sold in Box Hill",
+          "url": "/searchResults?activeTabName=Sold&suburbName=Box+Hill&propertyType=Any&priceMin=0&priceMax=0"
+        },
+        {
+          "description": "Sold in South Yarra",
+          "url": "/searchResults?activeTabName=Sold&suburbName=South+Yarra&propertyType=Any&priceMin=0&priceMax=0"
+        },
+        {
+          "description": "Sold in Carlton",
+          "url": "/searchResults?activeTabName=Sold&suburbName=Carlton&propertyType=Any&priceMin=0&priceMax=0"
+        },
+        {
+          "description": "Sold in Fitzroy",
+          "url": "/searchResults?activeTabName=Sold&suburbName=Fitzroy&propertyType=Any&priceMin=0&priceMax=0"
+        }
       ]
     },
     {
       "tabName": "Popular searches",
       "tabDescription": "Browse popular property searches",
       "tabLinks": [
-        { "description": "New homes NSW", "url": "todo.create.this.resource" },
-        { "description": "New homes VIC", "url": "todo.create.this.resource" }
+        {
+          "description": "Real estate Box Hill",
+          "url": "/searchResults?activeTabName=Buy&suburbName=Box+Hill&propertyType=Any&priceMin=0&priceMax=0"
+        },
+        {
+          "description": "Rent in Box Hill",
+          "url": "/searchResults?activeTabName=Rent&suburbName=South+Yarra&propertyType=Any&priceMin=0&priceMax=0"
+        }
       ]
     }
   ]
