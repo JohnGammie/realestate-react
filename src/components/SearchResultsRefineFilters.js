@@ -22,10 +22,10 @@ const SearchResultsRefineFilters = (props) => {
     setModalIsOpen(false);
   };
 
-  const submitSearch = (tabName) => {
+  const submitSearch = (tabName, suburbName) => {
     let filterParams = {
       activeTabName: tabName,
-      suburbName: props.suburbName,
+      suburbName: suburbName ?? props.suburbName,
       propertyType: props.propertyType,
       priceMin: props.priceMin,
       priceMax: props.priceMax,
@@ -51,6 +51,10 @@ const SearchResultsRefineFilters = (props) => {
             <SearchInput
               input={props.suburbName}
               setInput={props.setSuburbName}
+              submitSearch={(suburbName) => {
+                props.setSuburbName(suburbName);
+                submitSearch(props.activeTabName, suburbName);
+              }}
             />
           </FilterSubSection>
           <FilterSubSection>

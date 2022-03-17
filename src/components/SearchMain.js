@@ -75,7 +75,11 @@ const SearchMain = (props) => {
     <SearchContainer>
       <TabsContainer>{Tabs()}</TabsContainer>
       <SearchDetailsContainer>
-        <SearchInput input={suburbName} setInput={setSuburbName} />
+        <SearchInput
+          input={suburbName}
+          setInput={setSuburbName}
+          submitSearch={() => {}}
+        />
         <SearchFilters
           propertyType={propertyType}
           setPropertyType={(obj) => setPropertyType(obj)}

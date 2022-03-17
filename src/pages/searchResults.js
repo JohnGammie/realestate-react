@@ -40,6 +40,10 @@ const SearchResults = () => {
       });
   };
 
+  useEffect(() => {
+    fetchSearchResults();
+  }, [suburbName]);
+
   const generatePageContent = () => {
     let contentCollection = [];
 

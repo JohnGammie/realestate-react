@@ -40,7 +40,10 @@ export const SearchInput = (props) => {
         id="suburbs"
         name="suburbs"
         value={props.input}
-        onChange={(e) => props.setInput(e.target.value)}
+        onChange={(e) => {
+          props.setInput(e.target.value);
+          props.submitSearch(e.target.value);
+        }}
       >
         {generateOptions()}
       </DropdownInput>
