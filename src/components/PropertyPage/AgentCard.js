@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   StyledAgentCard,
   AgentCardImage,
@@ -6,6 +7,14 @@ import {
 } from "../styles/PropertyPage";
 
 const AgentCard = (props) => {
+  const navigate = useNavigate();
+
+  const navigateAgentContactPage = () => {
+    navigate("/contact-agent", {
+      state: { name: props.agent.name, phoneNumber: props.agent.phoneNumber },
+    });
+  };
+
   return (
     <StyledAgentCard>
       <AgentCardImage>
@@ -14,7 +23,7 @@ const AgentCard = (props) => {
       <AgentCardDetails>
         <div>{props.agent.name}</div>
         <div>{props.agent.phoneNumber}</div>
-        <button>Contact</button>
+        <button onClick={navigateAgentContactPage}>Contact</button>
       </AgentCardDetails>
     </StyledAgentCard>
   );

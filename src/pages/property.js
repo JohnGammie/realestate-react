@@ -41,6 +41,7 @@ const Property = () => {
           image1={image1}
           image2={image1}
           image3={image1}
+          agent={responseData.agent}
         ></HeadingSummary>
         <div className="sections">
           <div

@@ -11,6 +11,7 @@ import Sold from "./pages/sold";
 import SearchResults from "./pages/searchResults";
 import Property from "./pages/property";
 import HomeLoans from "./pages/homeLoans";
+import ContactAgent from "./pages/contactAgent";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/searchResults" element={<SearchResults />}></Route>
           <Route path="/property" element={<Property />}></Route>
           <Route path="/home-loans" element={<HomeLoans />}></Route>
+          <Route path="/contact-agent" element={<ContactAgent />}></Route>
         </Routes>
       </Router>
     </div>

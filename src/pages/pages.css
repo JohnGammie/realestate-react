@@ -65,3 +65,18 @@ body {
 #searchResultPage {
   background-color: #f9f7fc;
 }
+
+.contactAgentPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  gap: 16px;
+  font-size: 36px;
+}
+
+.contactAgentPage img {
+  border-radius: 40px;
+  width: 120px;
+  height: 120px;
+}

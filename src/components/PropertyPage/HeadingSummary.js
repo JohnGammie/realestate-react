@@ -6,8 +6,18 @@ import {
   SmallerImages,
 } from "../styles/PropertyPage";
 import { currencyFormatter } from "../../helpers/currencyFormatter";
+import { useNavigate } from "react-router-dom";
 
 const HeadingSummary = (props) => {
+  const navigate = useNavigate();
+
+  const navigateAgentContactPage = () => {
+    console.log(props);
+    navigate("/contact-agent", {
+      state: { name: props.agent.name, phoneNumber: props.agent.phoneNumber },
+    });
+  };
+
   return (
     <StyledHeadingSummary>
       <HeadingDetails>
@@ -17,7 +27,7 @@ const HeadingSummary = (props) => {
           {props.address.suburb.postcode}
         </h1>
         <h2>{currencyFormatter.format(props.price)}</h2>
-        <div>Contact Agent</div>
+        <div onClick={navigateAgentContactPage}>Contact Agent</div>
       </HeadingDetails>
       <Images>
         <img src={props.image1} alt="" />
