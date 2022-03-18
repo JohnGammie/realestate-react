@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import SearchResultPropertyCard from "../components/searchResultPropertyCard";
 import "./pages.css";
 import Footer from "../components/Footer";
@@ -42,6 +42,7 @@ const SearchResults = () => {
 
   useEffect(() => {
     fetchSearchResults();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [suburbName]);
 
   const generatePageContent = () => {
@@ -96,6 +97,7 @@ const SearchResults = () => {
 
   useEffect(() => {
     fetchSearchResults();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

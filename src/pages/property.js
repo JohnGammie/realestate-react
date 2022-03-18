@@ -14,17 +14,15 @@ const Property = () => {
 
   useEffect(() => {
     fetchProperty();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchProperty = async () => {
-    await fetch(
-      process.env.REACT_APP_API_URL + "/search" + "/property" + `/${id}`,
-      {
-        header: {
-          Accept: "application/json",
-        },
-      }
-    )
+    await fetch(process.env.REACT_APP_API_URL + `/search/property/${id}`, {
+      header: {
+        Accept: "application/json",
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

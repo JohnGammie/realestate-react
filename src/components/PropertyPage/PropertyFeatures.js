@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect } from "react";
 import { Feature } from "../styles/PropertyPage";
 import { StyledPropertyFeatures } from "../styles/PropertyPage";
 
@@ -83,7 +82,7 @@ const PropertyFeatures = () => {
 
     const collection = [];
     selected.map((feature, index) => {
-      collection.push(<li key={index}>{feature}</li>);
+      return collection.push(<li key={index}>{feature}</li>);
     });
 
     return collection;

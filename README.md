@@ -1,6 +1,6 @@
 # Realestate
 
-React project intended to be a clone of realestate.com.au as at March 2022
+React educational project, inspired by realestate.com.au as at March 2022
 
 ## Build
 
@@ -8,4 +8,4 @@ React project intended to be a clone of realestate.com.au as at March 2022
 
 ## Deployment
 
-Simple `npm build` of the repo on Netlify as CI on `main` commits.
+CI to Netlify of `main` branch.
