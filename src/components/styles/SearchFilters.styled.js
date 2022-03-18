@@ -35,10 +35,11 @@ export const ModalTab = styled.div`
 `;
 
 export const ModalSectionContainer = styled.div`
-  margin: 24px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   // align-items: center;
+  border-bottom: 0.5px solid lightgrey;
 
   & > ul {
     display: grid;
@@ -62,6 +63,29 @@ margin-bottom: 8px;`;
 export const ModalFooter = styled.div`
   display: flex;
   justify-content: space-around;
+  padding: 18px 0px;
+
+  button {
+    font-size: 24px;
+    border: 1px solid lightgrey;
+    background-color: white;
+    border-radius: 10px;
+
+    :hover {
+      background-color: gainsboro;
+    }
+  }
+
+  #search {
+    color: white;
+    background-color: red;
+    padding 4px 16px;
+    border: none;
+
+    :hover {
+      background-color: darkred;
+    }
+  }
 `;
 
 export const StyledModalDropdown = styled.div`

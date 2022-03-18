@@ -64,6 +64,7 @@ const SearchResultPropertyCard = (props) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: <NextArrowStyle />,
+    initialSlide: Math.floor(Math.random() * 3),
   };
 
   //   @TODO Add agent heading & image

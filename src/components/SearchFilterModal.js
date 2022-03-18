@@ -171,7 +171,10 @@ const SearchFilterModal = (props) => {
       </ModalSectionContainer>
       <ModalFooter>
         <button onClick={() => clearFilters()}>Clear Filters</button>
-        <button onClick={() => props.submitSearch(true, activeTabName)}>
+        <button
+          id="search"
+          onClick={() => props.submitSearch(true, activeTabName)}
+        >
           Search
         </button>
       </ModalFooter>

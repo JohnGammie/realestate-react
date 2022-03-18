@@ -82,8 +82,8 @@ const PropertyFeatures = () => {
     const selected = shuffled.slice(0, 3);
 
     const collection = [];
-    selected.map((feature) => {
-      collection.push(<li>{feature}</li>);
+    selected.map((feature, index) => {
+      collection.push(<li key={index}>{feature}</li>);
     });
 
     return collection;
