@@ -23,4 +23,8 @@ export const PropertyCardItem = styled.div`
 
 export const PropertyCardText = styled.div`
   padding: 12px;
+
+  :hover {
+    background-color: gainsboro;
+  }
 `;

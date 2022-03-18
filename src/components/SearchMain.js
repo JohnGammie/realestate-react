@@ -13,7 +13,7 @@ import { createSearchParams, useNavigate } from "react-router-dom";
 
 const SearchMain = (props) => {
   const navigate = useNavigate();
-  const tabNames = ["Buy", "Rent", "Sold", "Address", "Agents"];
+  const tabNames = ["Buy", "Rent", "Sold"];
   const [activeTabName, setActiveTabName] = useState(tabNames[props.tab ?? 0]);
   const [suburbName, setSuburbName] = useState("Box Hill");
   // @TODO probably get these values form an API endpoint
