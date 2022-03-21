@@ -72,7 +72,7 @@ const SearchFilterModal = (props) => {
     );
   };
 
-  const generatePriceOptions = () => {
+  const generatePriceOptions = (type) => {
     const generateData = (startValue, increment, count) => {
       let data = [startValue];
       for (let i = 0; i < count; i++) {
@@ -97,7 +97,7 @@ const SearchFilterModal = (props) => {
       // Buy/Sold
       buyPriceData.forEach((element, index) => {
         optionsCollection.push(
-          <option key={index} value={element}>
+          <option key={index} value={element} data-testid={type + element}>
             {currencyFormatter.format(element)}
           </option>
         );
@@ -146,11 +146,12 @@ const SearchFilterModal = (props) => {
             <select
               name="priceMin"
               id="priceMin"
+              data-testid="priceMin"
               onChange={(event) => props.setPriceMin(event.target.value)}
               value={props.priceMin}
             >
               <option value={0}>Any</option>
-              {generatePriceOptions()}
+              {generatePriceOptions("Min")}
             </select>
           </StyledModalDropdown>
 
@@ -159,11 +160,12 @@ const SearchFilterModal = (props) => {
             <select
               name="priceMax"
               id="priceMax"
+              data-testid="priceMax"
               onChange={(event) => props.setPriceMax(event.target.value)}
               value={props.priceMax}
             >
               <option value={0}>Any</option>
-              {generatePriceOptions()}
+              {generatePriceOptions("Max")}
             </select>
           </StyledModalDropdown>
         </ul>
@@ -172,6 +174,7 @@ const SearchFilterModal = (props) => {
         <button onClick={() => clearFilters()}>Clear Filters</button>
         <button
           id="search"
+          data-testid="searchModal"
           onClick={() => props.submitSearch(true, activeTabName)}
         >
           Search
